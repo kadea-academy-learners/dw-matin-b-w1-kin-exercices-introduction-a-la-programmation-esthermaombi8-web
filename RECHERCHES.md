@@ -11,15 +11,30 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...un objet est un groupement des plusieurs informations liées dans un seul conteneur,null parcontre indique une absence de valeur.
+typeof null renvoie "object" à cause d’une erreur historique dans les premières versions de JavaScript, null était identifié comme un objet, Ce comportement a été conservé pour éviter de casser les anciens programmes.
+
 
 **Mon test dans la console :**
 
-```js
-// colle ici le test que tu as exécuté et le résultat obtenu
-```
+```js  $ node semaine-13/F1-carte-apprenant.js
+const prenom = "Grace";  // nous utilisons const pour le prénom car il ne sera pas reassigner tout au long du programme.
+const commune = "Lemba"; // la commune ne changera pas pendant l'exercice
+const age = 22; // l'âge reste fixe pendant l'exécution du script.
+const estInscrit = true; // le statut d'inscription ne sera pas modifié
+let surnom; // le surnom n'est pas encore renseigné et pourra être attribué plus tard.
+const ancienneFormation = null; //  on conserve null pour représenter l'absence d'ancienne formation.
 
-**Source :** 
+console.log(`Je m'appelle ${prenom}, j'ai ${age} ans, j'habite à ${commune}`);
+
+
+console.log(`${typeof prenom}, ${typeof commune},${typeof age},${typeof estInscrit}, ${typeof surnom},${typeof ancienneFormation}`);
+
+// colle ici le test que tu as exécuté et le résultat obtenu
+``` Je m'appelle Grace, j'ai 22 ans, j'habite à Lemba
+string, string,number,boolean, undefined,object
+
+**Source :** oui (Pourquoi typeof null renvoie-t-il 'object' alors que null n'est pas un objet en javaScript et c'est quoi un objet en js ?,J’ai vérifié sur MDN que typeof null renvoie "object", bien que null soit une valeur primitive+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/typeof )
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -263,16 +278,54 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...JavaScript stocke tout ses nombres de type number en binaire (au format flottant 64bits) etcertains decimal comme 0,1 et 0,2 ne peuvent pas s'écrire de manière exacte en binaire,ils deviennent des fractions binaires infinies qui sont arrondies.
+ toFixed() est une methode qui renvoie une chaîne de caractères.Avec +, on risque d'assembler et non additionner,elle arrondit de facon imprevisible qu'au cours d'une chaine de calcul elle peut fausser les resultat en accumulant des erreurs
 
 **Mon test dans la console :**
 
 ```js
+const calculerLivraison = (distanceKm, poidsKg, estUrgent = false) => {
+    let montant;
+
+    // Choisit le tarif de base selon la distance.
+    if (distanceKm <= 5) {
+        montant = 2000;
+    } else if (distanceKm <= 15) {
+        montant = 4000;
+    } else {
+        montant = 7000;
+    }
+
+    // Ajoute un supplément si le poids dépasse 10 kg.
+    if (poidsKg > 10) {
+        montant += 1500;
+    }
+
+    // Applique le tarif urgent à tout le montant.
+    if (estUrgent === true) {
+        montant *= 1.5;
+    }
+
+    // Ajoute la TVA de 16 % et renvoie le montant arrondi.
+    return Math.round(montant * 1.16);
+};
+
+// Teste les trois exemples de l'énoncé.
+console.log(calculerLivraison(3, 2));         // 2320
+console.log(calculerLivraison(10, 12, true)); // 9570
+console.log(calculerLivraison(20, 5));        // 8120
+
+
 // colle ici le test que tu as exécuté et le résultat obtenu
-```
+```$ node semaine-13/A1-livraison.js
+2320
+9570
+8120
 
-**Source :** 
-
+**Source :** OUI, Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ,comment pouvons nous définir toFixed() et pourquoi il est un piège si on veut continuer à calculer ?
+https://www.google.com/url?sa=i&source=web&rct=j&url=https://coddy.tech/docs/fr/javascript/numbers-and-bigint&ved=2ahUKEwiclaLu1M2XAxUWRZ8JHe1rNB8QmL8OegoIAggACAAIHxAE&opi=89978449&cd&psig=AOvVaw2bbrz2_nIK5kleDDRVxhRT&ust=1792759809698000
+https://www.google.com/url?sa=i&source=web&rct=j&url=https://www.youtube.com/watch?v%3DCDYiwshriWw&ved=2ahUKEwiclaLu1M2XAxUWRZ8JHe1rNB8QmL8OegoIAggACAAIHxAP&opi=89978449&cd&psig=AOvVaw2bbrz2_nIK5kleDDRVxhRT&ust=1792759809698000
+https://www.google.com/url?sa=i&source=web&rct=j&url=https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math&ved=2ahUKEwjW84TB3M2XAxW2V0EAHQYpJxUQxfoOegYIAAgMEAY&opi=89978449&cd&psig=AOvVaw0lq3VUdHLcssxrJbR3xGUU&ust=1792761862411000
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
 ## A2 — Le moteur de paie v2
