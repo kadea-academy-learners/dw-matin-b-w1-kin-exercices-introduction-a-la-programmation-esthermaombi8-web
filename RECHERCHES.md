@@ -334,7 +334,11 @@ https://www.google.com/url?sa=i&source=web&rct=j&url=https://developer.mozilla.o
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...La methode reduce()parcourt les éléments d’un tableau pour les combiner et obtenir un seul résultat final.
+Elle garde en mémoire un résultat provisoire appelé accumulateur..const totalHeures = heuresSemaine.reduce(
+  (total, heuresJour) => total + heuresJour,
+  0
+);
 
 **Mon test dans la console :**
 
@@ -342,7 +346,7 @@ https://www.google.com/url?sa=i&source=web&rct=j&url=https://developer.mozilla.o
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
