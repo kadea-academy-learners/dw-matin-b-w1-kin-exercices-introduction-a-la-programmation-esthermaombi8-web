@@ -366,15 +366,22 @@ https://developer.mozilla.org/fr/docs/Web/API/console/table_static
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Pour classer un bulletin de la meilleure à la moins bonne moyenne en JavaScript, il faut utiliser la méthode .sort() avec une fonction de comparaison descendante.sort() modifie le tableau d’origine parce qu’elle effectue le tri directement dans ce tableau,elle ne crée aucune copie ,elle renvoie ensuite ce même tableau trié ,parfois sort().Pour l'eviter il est recommandé de changer l’ordre des éléments du tableau.créer une copie du tableau avant le tri. Ainsi, bulletinTrie contient le classement et bulletin conserve son ordre du depart.
 
 **Mon test dans la console :**
 
-```js
+```console.table(bulletin);
+console.log(`${admis.length} admis`);
+(premierExcellent !== undefined) {
+    console.log(`Premier Excellent : ${premierExcellent.nom}`);
+ {console.log(`Aucun élèves avec la mention Excellent`);
+js 4 admis
+Premier Excellent : Bijou
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON, https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
