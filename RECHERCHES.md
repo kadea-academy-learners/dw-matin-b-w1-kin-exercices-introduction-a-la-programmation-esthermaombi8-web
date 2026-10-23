@@ -389,16 +389,24 @@ Premier Excellent : Bijou
 
 **Question :** Explique la « recherche dichotomique » et pourquoi 7 essais suffisent toujours pour trouver un nombre entre 1 et 100.
 
-**Ma réponse (avec mes mots, 3 à 5 lignes) :**
+**Ma réponse (avec mes mots, 3 à 5 lignes) :**La recherche dichotomique consiste à proposer le nombre situé au milieu des valeurs encore possibles.Tu proposes ensuite le milieu du nouvel intervalle, et tu recommences. Chaque mauvaise réponse élimine environ la moitié des possibilités.
+Le nombre de possibilités diminue ainsi : 100 → 50 → 25 → 12 → 6 → 3 → 1. Sept essais suffisent si tu choisis toujours le milieu de l’intervalle après six mauvaises propositions au maximum, il reste un seul nombre et la septième permet de le trouver.
 
 ...
 
 **Mon test dans la console :**
 
-```js
+```jouer();
+
+js3VM286:39 Plus grand !
+2VM286:41 Plus petit !
+2VM286:39 Plus grand !
+VM286:46 Les 7 essais sont épuisés. Le nombre était 46.
+undefined
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI, c'est quoi une recherches dichotomique et en quoi consiste-t-elle?et pourquoi 7 essais suffisent toujours pour trouver un nombre entre 1 et 100.
+https://fr.wikipedia.org/wiki/Recherche_dichotomique
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non

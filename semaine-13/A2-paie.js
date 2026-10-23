@@ -29,12 +29,11 @@ const joursSemaine = [
 // let : le total augmente à chaque passage.
 let totalHeures = 0;
 
-// Parcourt le tableau et ajoute les heures de chaque jour au total.
 heuresSemaine.forEach((heuresJour) => {
     totalHeures += heuresJour;
 });
 
-// Calcule le salaire avec un taux horaire par défaut de 2 500 FC.
+// Calcule du salaire avec un taux horaire par défaut de 2 500 FC.
 const calculerSalaire = (heures, tauxHoraire = 2500) => {
     if (heures <= 40) {
         return heures * tauxHoraire;
@@ -44,10 +43,10 @@ const calculerSalaire = (heures, tauxHoraire = 2500) => {
     return (40 * tauxHoraire) + (heuresSupplementaires * tauxHoraire * 1.5);
 };
 
-// Commence par considérer le premier jour comme le plus chargé.
+
 let indiceJourMax = 0;
 
-// Compare les heures des autres jours avec le maximum trouvé.
+
 for (let indice = 1; indice < heuresSemaine.length; indice++) {
     if (heuresSemaine[indice] > heuresSemaine[indiceJourMax]) {
         indiceJourMax = indice;
@@ -56,5 +55,5 @@ for (let indice = 1; indice < heuresSemaine.length; indice++) {
 
 const salaire = calculerSalaire(totalHeures);
 
-// Affiche tous les résultats dans un gabarit littéral.
+// Affichage de tous les résultats dans un gabarit littéral.
 console.log(`Total : ${totalHeures} h — Salaire : ${salaire} FC ; jour le plus chargé : ${joursSemaine[indiceJourMax]} (${heuresSemaine[indiceJourMax]} h).`);

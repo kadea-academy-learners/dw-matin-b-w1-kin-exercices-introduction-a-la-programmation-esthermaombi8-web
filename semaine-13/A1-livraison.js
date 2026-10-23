@@ -50,7 +50,7 @@ const calculerLivraison = (distanceKm, poidsKg, estUrgent = false) => {
     return Math.round(montant * 1.16);
 };
 
-// Teste les trois exemples de l'énoncé.
+// Teste des trois exemples evoqué dans l'énoncé.
 console.log(calculerLivraison(3, 2));         // 2320
 console.log(calculerLivraison(10, 12, true)); // 9570
 console.log(calculerLivraison(20, 5));        // 8120
