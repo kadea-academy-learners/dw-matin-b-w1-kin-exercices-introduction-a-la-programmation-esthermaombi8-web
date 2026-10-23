@@ -154,15 +154,29 @@ node semaine-13/M1-fizzbuzz.js
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+... pour afficher 75000 sous la forme 75 000 avec totalString() il suffit de changer paramètres régionaux en fr-FR on aura donc variable.toLocaleString('fr-FR'),le navigateur utilise par defaut la langue de l'utilisateur,en forçant la locale 'fr-FR',applique les règles de typographie française
+
 
 **Mon test dans la console :**
 
-```js
+```js 
+console.log(retirer(100000, 25000));
+console.log(retirer(100000, 12000));
+console.log(retirer(1000000, 600000));
+console.log(retirer(20000, 50000));
+
+ node semaine-13/M2-dab.js
+Retrait accepté. Nouveau solde : 75000 FC
+Montant invalide : multiples de 5 000 FC uniquement
+Plafond dépassé : 500 000 FC maximum
+Solde insuffisant
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI.comment afficher 75000 sous la forme 75 000 avec un espace comme separateur avec tolocalestring() ?
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString#:~:text=La%20m%C3%A9thode%20toLocaleString()%20des%20instances,prendre%20en%20compte%20les%20locales.
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 

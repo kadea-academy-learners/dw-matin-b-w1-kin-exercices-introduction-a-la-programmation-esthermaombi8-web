@@ -29,8 +29,6 @@ const retirer = (solde, montant) => {
     if (montant < 0 || montant % 5000 !== 0) {
         return `Montant invalide : multiples de 5 000 FC uniquement`;
     }
-
-
     if (montant > 500000) {
         return `Plafond dépassé : 500 000 FC maximum`;
     }
