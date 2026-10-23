@@ -284,40 +284,13 @@ string, string,number,boolean, undefined,object
 **Mon test dans la console :**
 
 ```js
-const calculerLivraison = (distanceKm, poidsKg, estUrgent = false) => {
-    let montant;
 
-    // Choisit le tarif de base selon la distance.
-    if (distanceKm <= 5) {
-        montant = 2000;
-    } else if (distanceKm <= 15) {
-        montant = 4000;
-    } else {
-        montant = 7000;
-    }
-
-    // Ajoute un supplément si le poids dépasse 10 kg.
-    if (poidsKg > 10) {
-        montant += 1500;
-    }
-
-    // Applique le tarif urgent à tout le montant.
-    if (estUrgent === true) {
-        montant *= 1.5;
-    }
-
-    // Ajoute la TVA de 16 % et renvoie le montant arrondi.
-    return Math.round(montant * 1.16);
-};
-
-// Teste les trois exemples de l'énoncé.
+// colle ici le test que tu as exécuté et le résultat obtenu
+```$Teste des trois exemples evoqué dans l'énoncé.
 console.log(calculerLivraison(3, 2));         // 2320
 console.log(calculerLivraison(10, 12, true)); // 9570
 console.log(calculerLivraison(20, 5));        // 8120
-
-
-// colle ici le test que tu as exécuté et le résultat obtenu
-```$ node semaine-13/A1-livraison.js
+//  node semaine-13/A1-livraison.js
 2320
 9570
 8120
@@ -335,7 +308,8 @@ https://www.google.com/url?sa=i&source=web&rct=j&url=https://developer.mozilla.o
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
 ...La methode reduce()parcourt les éléments d’un tableau pour les combiner et obtenir un seul résultat final.
-Elle garde en mémoire un résultat provisoire appelé accumulateur..const totalHeures = heuresSemaine.reduce(
+Elle garde en mémoire un résultat provisoire appelé accumulateur
+const totalHeures = heuresSemaine.reduce(
   (total, heuresJour) => total + heuresJour,
   0
 );
@@ -344,7 +318,10 @@ Elle garde en mémoire un résultat provisoire appelé accumulateur..const total
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
-```
+```Affichage de tous les résultats dans un gabarit littéral.
+console.log(`Total : ${totalHeures} h — Salaire : ${salaire} FC ; jour le plus chargé : ${joursSemaine[indiceJourMax]} (${heuresSemaine[indiceJourMax]} h).`);
+$ node semaine-13/A2-paie.Js
+Total : 48 h — Salaire : 130000 FC ; jour le plus chargé : mercredi (10 h).
 
 **Source :**NON. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
@@ -356,15 +333,30 @@ Elle garde en mémoire un résultat provisoire appelé accumulateur..const total
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Pour afficher seulement les colonnes nom et stock,il faut passer leurs noms dans le deuxième argument de console.log en string,on aura donc console.table(produits, ["nom", "stock"]);.
+Quand aucun produit ne correspond à la recherche find() renvoie undefined pour signifier qu'aucun élément n’a été trouvé ,filter() renvoie [] un tableau vide
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
-```
 
-**Source :** 
+// colle ici le test que tu as exécuté et le résultat obtenu
+```console.log(chercherProduit(104));
+console.log(chercherProduit(999));
+console.log(`${produitsEnRupture.length} produits en rupture.`);
+{
+  id: 104,
+  nom: 'Gourde isotherme',
+  categorie: 'Accessoires',
+  prixFC: 21000,
+  stock: 8
+}
+Produit introuvable
+2 produits en rupture.
+
+**Source :**OUI,Comment afficher seulement les colonnes nom et stock avec console.table() ? Et que renvoient .find() et .filter() quand rien ne correspond ?
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array
+https://developer.mozilla.org/fr/docs/Web/API/console/table_static
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
