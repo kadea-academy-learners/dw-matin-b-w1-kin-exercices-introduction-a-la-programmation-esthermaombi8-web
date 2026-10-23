@@ -29,7 +29,7 @@ const jouer = () => {
 
     let nombreEssais = 0;
     let estTrouve = false;
-
+    abc
     while (estTrouve === false && nombreEssais < essaisMaximum) {
         const saisie = prompt(
             `Devine un entier entre 1 et 100. Il te reste ${essaisMaximum - nombreEssais} essais.`
