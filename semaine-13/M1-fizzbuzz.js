@@ -20,4 +20,24 @@ Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeu
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+let resultat = "";
 
+for (let i = 1; i <= 30; i++) {
+    ////ordre de condition est important ici parceque Pour 15, cette condition est vraie et donc le programme affichera Malewa, puis ignorera les else if suivants.
+    if (i % 3 === 0 && i % 5 === 0) {
+        resultat = `${resultat}MalewaWewa`;
+    } else if (i % 3 === 0) {
+        resultat = `${resultat}Malewa`;
+    } else if (i % 5 === 0) {
+        resultat = `${resultat}Wewa`;
+    } else {
+        resultat = `${resultat}${i}`;
+    }
+
+
+    if (i < 30) {
+        resultat = `${resultat}, `;
+    }
+}
+
+console.log(resultat);

@@ -134,15 +134,17 @@ string, string,number,boolean, undefined,object
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...FizzBuzz est célèbre dans les entretiens d'embauche parce qu'il sert de filtre d'élimination instantané,il permet de vérifier les bases de la programmation et de connaitre comment un candidat peut réflechir,sa capacité de structurér les conditions et sa capacité d'expliquer chaque ligne du code.
 
 **Mon test dans la console :**
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
-```
+``` console.log(resultat); .
+node semaine-13/M1-fizzbuzz.js
+1, 2, Malewa, 4, Wewa, Malewa, 7, 8, Malewa, Wewa, 11, Malewa, 13, 14, MalewaWewa, 16, 17, Malewa, 19, Wewa, Malewa, 22, 23, Malewa, Wewa, 26, Malewa, 28, 29, MalewaWewa
 
-**Source :** 
+**Source :**NON.    https://www.quora.com/Why-do-employers-use-the-FizzBuzz-test-to-qualify-developers-when-the-developer-is-perfectly-capable-without-FizzBuzz 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -395,7 +397,7 @@ Le nombre de possibilités diminue ainsi : 100 → 50 → 25 → 12 → 6 → 3 
 ...
 
 **Mon test dans la console :**
-
+console.log(`Les 7 essais sont épuisés. Le nombre était ${nombreMystere}.`);
 ```jouer();
 
 js3VM286:39 Plus grand !
