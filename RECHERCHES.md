@@ -293,15 +293,33 @@ Mbote Ney
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Chaque exemple ci-dessous est indépendant.
+
+- **`+=`** ajoute une valeur : `let x = 10; x += 3;` donne `13`.
+- **`-=`** soustrait une valeur : `let x = 10; x -= 3;` donne `7`.
+- **`*=`** multiplie par une valeur : `let x = 10; x *= 3;` donne `30`.
+- **`/=`** divise par une valeur : `let x = 10; x /= 2;` donne `5`.
+- **`%=`** affecte le reste d’une division : `let x = 10; x %= 3;` donne `1`.
+- **`**=`** élève à une puissance : `let x = 2; x **= 3;` donne `8`.
+- **`<<=`** décale les bits vers la gauche : `let x = 4; x <<= 1;` donne `8`.
+- **`>>=`** décale les bits vers la droite en conservant le signe : `let x = 8; x >>= 1;` donne `4`.
+- **`>>>=`** décale les bits vers la droite en insérant des zéros à gauche : `let x = 8; x >>>= 1;` donne `4`.
+- **`&=`** applique un ET bit à bit : `let x = 6; x &= 3;` donne `2`.
+- **`^=`** applique un OU exclusif bit à bit : `let x = 6; x ^= 3;` donne `5`.
+- **`|=`** applique un OU bit à bit : `let x = 6; x |= 3;` donne `7`.
+- **`&&=`** affecte la valeur de droite si la variable est truthy : `let x = 5; x &&= 10;` donne `10`.
+- **`||=`** affecte la valeur de droite si la variable est falsy : `let x = 0; x ||= 10;` donne `10`.
+- **`??=`** affecte la valeur de droite si la variable vaut `null` ou `undefined` : `let x = null; x ??= 10;` donne `10`.
 
 **Mon test dans la console :**
 
-```js
+```js console.log(`Total après 12 semaines : ${totalEpargne} FC`);
+Total après 12 semaines : 27000 FC
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI.il existe combien des types d'operateur composé.peut-tu en citer et donner un exemple pour chacun?
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
