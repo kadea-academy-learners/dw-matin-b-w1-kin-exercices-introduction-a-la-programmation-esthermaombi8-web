@@ -44,15 +44,16 @@ string, string,number,boolean, undefined,object
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...NaN est une valeur spéciale qui indique qu’une conversion ou un calcul n’a pas produit de nombre valide ,NaN signifie qu’on n’a pas obtenu de nombre valide. Il ne représente donc pas une valeur précise qu’on pourrait comparer normalement et donc il renvoie false.
+on utilise Number.isNaN() pour le detecter
 
-**Mon test dans la console :**
+**Mon test dans la console :**console.log(`${saisie + 500}, puis ${total} ; les predictions vérifiées : ${Number("")}, ${Number("abc")}, ${Number(" 42 ")}, ${Number(true)}`);
 
-```js
+```js 2500500, puis 3000 ; les predictions vérifiées : 0, NaN, 42, 1
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON,https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
