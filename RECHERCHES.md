@@ -130,15 +130,18 @@ Mbote Lys ! puis 49.
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
-
+...continue saute les instructions restantes du tour actuel,elle sert à interrompre l'itération en cours d'une boucle pourque la boucle passe au tour suivant alors que break arrête complètement la boucle arrête et quitte complètement la boucle d'un coup.
 **Mon test dans la console :**
+console.log(`Décollage !`);
+
+node semaine-13/F6-compte-a-rebours.js
+10, 9, 8, 7, 6, 4, 3, 2, 1, Décollage !
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON,https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/continue 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
