@@ -243,18 +243,25 @@ avant correction : 15, aucun, aucun ; après correction : 15, 0, aucun.
 ## M5 — La vitre teintée (portée de bloc)
 
 **Question :** Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fonction et le « hoisting ».
-/ 0 ici ne signifie pas que l'apprenant n'a aucune note, le 0 ici signifie que l'apprenant a fait son Quiz est a 
+ 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...var est déconseillé dans le code moderne parce que son comportement peut provoquer des erreurs difficiles à repérer. On préfère const et let, dont la portée est limitée au bloc { }.
+La portée de fonction signifie qu’une variable déclarée avec var est accessible dans toute la fonction qui la contient, même si elle est déclarée dans un bloc if ou une boucle. Elle ne reste donc pas limitée à ce bloc.
+Le hoisting signifie que JavaScript prend en compte les déclarations avant d’exécuter les instructions. Avec var, la variable peut être lue avant sa déclaration sa valeur est donc undefined. 
 
-**Mon test dans la console :**
+**Mon test dans la console :** avant correction: const ville = "Kinshasa";
+SyntaxError: Identifier 'ville' has already been declared
+aprés correction:
+Kinshasa
+Gombe
+pondu
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON,https://openclassrooms.com/forum/sujet/let-ou-var
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
