@@ -63,15 +63,20 @@ on utilise Number.isNaN() pour le detecter
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...-7 % 2 renvoie -1, car en JavaScript, le reste conserve le signe du nombre divisé.
+Un nombre impair peut donc avoir un reste de 1 ou -1 quand on le divise par 2.Il vaut mieux utiliser nombre % 2 !== 0, car un nombre impair a toujours un reste différent de zéro, qu’il soit positif ou négatif.
+Avec nombre % 2 === 1, les impairs négatifs ne sont pas reconnus : par exemple, -7 % 2 donne -1, et non 1
 
 **Mon test dans la console :**
 
-```js
+    console.log(`Ticket ${numeroTicket} : pair, tu gagnes un tote bag.`);
+    console.log(`Ticket ${numeroTicket} : impair, tu gagnes un stylo.`);
+
+```js  Ticket 17 : impair, tu gagnes un stylo.
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI.Que renvoie -7 % 2 en javaScript et pourquoi il vaut mieux tester % 2 !== 0 plutôt que % 2 === 1 pour détecter un nombre impair
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
