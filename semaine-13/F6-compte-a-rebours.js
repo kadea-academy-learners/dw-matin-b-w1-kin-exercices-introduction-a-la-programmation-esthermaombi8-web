@@ -21,3 +21,8 @@ Recherche (à rédiger dans RECHERCHES.md) :
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+for (let i = 10; i >= 1; i--) {
+    console.log(`${i}`);
+}
+
+console.log(`Décollage !`);

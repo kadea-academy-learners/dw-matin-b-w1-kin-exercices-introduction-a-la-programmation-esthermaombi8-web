@@ -108,15 +108,19 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditi
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Dans une fonction fléchée, **on peut enlever les parenthèses s’il y a un seul paramètre simple**, sans valeur par défaut. Avec zéro ou plusieurs paramètres, elles sont obligatoires.
 
-**Mon test dans la console :**
+**On peut enlever return et les accolades lorsque le corps est une seule expression dont on veut renvoyer le résultat.** JavaScript renvoie alors automatiquement ce résultat : c’est le **retour implicite**.
 
-```js
+**Mon test dans la console :**console.log(`${saluer("Lys")} puis ${carre(7)}.`);
+
+```js  node semaine-13/F5-fonction-flechee.js
+Mbote Lys ! puis 49.
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON, https://coddy.tech/learn/fr/javascript/fundamentals/arrow_functions
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
