@@ -21,3 +21,8 @@ Quelle est la liste complète des valeurs falsy en JavaScript ? (Indice : il y e
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+// Le ternaire choisit "rempli" si la valeur est truthy,
+// sinon il choisit "vide".
+const estRempli = (valeur) => valeur ? "rempli" : "vide";
+
+console.log(`${estRempli("")}, ${estRempli("Esther")}, ${estRempli(0)}, ${estRempli(42)}, ${estRempli(null)}, ${estRempli(undefined)}, ${estRempli(NaN)}, ${estRempli(" ")}, ${estRempli("0")}, ${estRempli(false)}`);

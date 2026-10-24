@@ -186,15 +186,36 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Nu
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Les valeurs falsy sont celles que JavaScript considère comme fausses dans une condition :
+- false:le booleen faux lui meme
+- 0 et -0
+- 0n : zéro de type BigInt
+- "" : une chaîne vide, également écrite '' ou avec deux accents graves
+- null: l'absence intentionnelle des valeurs
+- undefined:une variable declaré qui n'a pas encore des valeurs
+- NaN: not a number
+- document.all : un cas historique particulier dans les navigateurs
+Attention : "0" et " " sont truthy, car ce sont des chaînes qui ne sont pas vides.
 
 **Mon test dans la console :**
 
-```js
+```js console.log(`${estRempli("")}, ${estRempli("Esther")}, ${estRempli(0)}, ${estRempli(42)}, ${estRempli(null)}, ${estRempli(undefined)}, ${estRempli(NaN)}, ${estRempli(" ")}, ${estRempli("0")}, ${estRempli(false)}`);
+$ node semaine-13/M3-champs-vides.js
+vide
+rempli
+vide
+rempli
+vide
+vide
+vide
+rempli
+rempli
+vide
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON, https://developer.mozilla.org/fr/docs/Glossary/Falsy
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
