@@ -271,15 +271,19 @@ pondu
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...ASI est une fonctionnalité javaScript qui insère des points virgules aprés chaque ligne de code et dans notre cas, le saut de ligne après return provoque l’insertion d’un point-virgule cela fait que la fonction s’arrête et renvoie undefined.il faut placer le message à renvoyer sur la même ligne que return.
 
 **Mon test dans la console :**
 
-```js
+```js console.log(saluer("Ney"));
+8
+660
+Mbote Ney
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
