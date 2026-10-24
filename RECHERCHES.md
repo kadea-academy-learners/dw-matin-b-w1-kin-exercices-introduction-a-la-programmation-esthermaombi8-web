@@ -329,15 +329,18 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+... while vérifie la condition avant chaque tour,avant qu'elle n'execute l'instruction et dans notre cas elle peut ne jamais s’exécuter.
+Avec un do...while, Le bloc d'instructions est exécuté une première fois, puis la condition est testée aprèset dans notre cas la batterie initiale de 15 % passerait donc à 0 %, et le compteur serait de 1 heure.
 
 **Mon test dans la console :**
 
-```js
+```js Après 6 h, batterie à 10 % : branche ton téléphone !
+Test : 0 tour, batterie à 15 %.
+ console.log(`Test : ${heuresTest} tour, batterie à ${batterieTest} %.`);
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON,https://www-sop.inria.fr/members/Sylvain.Chevillard/fr.selfhtml.org/javascript/langage/boucles.htm
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 

@@ -22,3 +22,24 @@ Quelle est la différence entre while et do...while ? Que donnerait l'étape 4 a
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+// let :on declare avec lt ces deux valeurs changent pendant la boucle.
+let batterie = 100;
+let heures = 0;
+
+while (batterie > 20) {
+    batterie -= 15;
+    heures++;
+}
+
+console.log(`Après ${heures} h, batterie à ${batterie} % : branche ton téléphone !`);
+
+// Test avec une batterie initiale de 15 %.
+let batterieTest = 15;
+let heuresTest = 0;
+
+while (batterieTest > 20) {
+    batterieTest -= 15;
+    heuresTest++;
+}
+
+console.log(`Test : ${heuresTest} tour, batterie à ${batterieTest} %.`);
