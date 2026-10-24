@@ -225,22 +225,25 @@ vide
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...L’opérateur ?? fournit une valeur par défaut uniquement si la valeur de gauche est null ou undefined.
+L’opérateur || fournit une valeur par défaut si la valeur de gauche est falsy, ce qui inclut aussi 0, false et "".
 
 **Mon test dans la console :**
 
-```js
+```js console.log(`avant correction : ${15 || "aucun"}, ${0 || "aucun"}, ${undefined || "aucun"} ; après correction : ${15 ?? "aucun"}, ${0 ?? "aucun"}, ${undefined ?? "aucun"}.`);
+
+avant correction : 15, aucun, aucun ; après correction : 15, 0, aucun.
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON,https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
 ## M5 — La vitre teintée (portée de bloc)
 
 **Question :** Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fonction et le « hoisting ».
-
+/ 0 ici ne signifie pas que l'apprenant n'a aucune note, le 0 ici signifie que l'apprenant a fait son Quiz est a 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
 ...

@@ -23,4 +23,12 @@ Que fait l'opérateur ?? (coalescence des nuls) et en quoi est-il différent de 
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+const afficherScoreBug = (score) => `Score : ${score || "aucun"}`;
+const afficherScore = (score) => `Score : ${score ?? "aucun"}`;
 
+console.log(`avant correction : ${15 || "aucun"}, ${0 || "aucun"}, ${undefined || "aucun"} ; après correction : ${15 ?? "aucun"}, ${0 ?? "aucun"}, ${undefined ?? "aucun"}.`);
+// 0 ici ne signifie pas que l'apprenant n'a aucune note, le 0 ici signifie que l'apprenant a fait son Quiz est a obtenue 0,le programme confond un score de zéro avec une absence de score
+//or L’opérateur || ne vérifie pas si un score existe. Il vérifie si la valeur est truthy ou falsy.puisque 0 est une valeur falsy || renvoi "aucun"
+
+const estConnecte = false; //// Le message s'affiche seulement si l'utilisateur est connecté, c'est à dire quand la valeur de la variable const estConnecte est true
+estConnecte && console.log(`Bienvenue !`);
