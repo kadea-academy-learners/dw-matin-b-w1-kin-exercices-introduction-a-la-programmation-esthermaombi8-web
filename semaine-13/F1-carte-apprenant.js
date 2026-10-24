@@ -21,14 +21,13 @@ Pourquoi typeof null renvoie-t-il 'object' alors que null n'est pas un objet ?
 // ===== FIN ÉNONCÉ =====
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
-const prenom = "Grace";  // nous utilisons const pour le prénom car il ne sera pas reassigner tout au long du programme.
-const commune = "Lemba"; // la commune ne changera pas pendant l'exercice
-const age = 22; // l'âge reste fixe pendant l'exécution du script.
-const estInscrit = true; // le statut d'inscription ne sera pas modifié
-let surnom; // le surnom n'est pas encore renseigné et pourra être attribué plus tard.
-const ancienneFormation = null; //  on conserve null pour représenter l'absence d'ancienne formation.
+const prenom = "Grâce"; // Le prénom reste le même dans ce programme.
+const age = 22; // Je ne modifie pas l'âge dans ce programme.
+const commune = "Lemba"; // La commune reste la même.
+const estInscrit = true; // Le statut d'inscription reste inchangé.
+let surnom; // Une valeur pourra être attribuée plus tard.
+const ancienneFormation = null; // Indique l'absence d'ancienne formation.
 
-console.log(`Je m'appelle ${prenom}, j'ai ${age} ans, j'habite à ${commune}`);
+console.log(`Je m'appelle ${prenom}, j'ai ${age} ans et j'habite à ${commune}.`);
 
-
-console.log(`${typeof prenom}, ${typeof commune},${typeof age},${typeof estInscrit}, ${typeof surnom},${typeof ancienneFormation}`);
+console.log(`${typeof prenom}, ${typeof age}, ${typeof commune}, ${typeof estInscrit}, ${typeof surnom}, ${typeof ancienneFormation}`);

@@ -30,4 +30,51 @@ Comment afficher seulement les colonnes nom et stock avec console.table() ? Et q
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+const produits = [
+   { id: 101, nom: "Clé USB 32 Go", categorie: "Informatique", prixFC: 14000, stock: 25 },
+   { id: 102, nom: "Sac à dos Kadea", categorie: "Accessoires", prixFC: 42000, stock: 0 },
+   { id: 103, nom: "Souris sans fil", categorie: "Informatique", prixFC: 28000, stock: 12 },
+   { id: 104, nom: "Gourde isotherme", categorie: "Accessoires", prixFC: 21000, stock: 8 },
+   { id: 105, nom: "Casque audio", categorie: "Informatique", prixFC: 70000, stock: 0 },
+   { id: 106, nom: "Carnet de notes", categorie: "Papeterie", prixFC: 7000, stock: 40 }
+];
 
+// Affichage tous les produits sous forme de tableau.
+console.table(produits);
+
+//  produits de la catégorie Informatique.
+const produitsInformatiques = produits.filter(
+   (produit) => produit.categorie === "Informatique"
+);
+
+console.table(produitsInformatiques);
+
+// Convertion des prix en dollars avec un taux fictif .
+const TAUX = 2800;
+
+
+const produitsAvecPrixUSD = produits.map((produit) => ({
+   ...produit,
+   prixUSD: Math.round(produit.prixFC / TAUX)
+}));
+
+console.table(produitsAvecPrixUSD);
+
+
+const chercherProduit = (id) => {
+   const produitTrouve = produits.find((produit) => produit.id === id);
+
+   if (produitTrouve === undefined) {
+      return "Produit introuvable";
+   }
+
+   return produitTrouve;
+};
+
+console.log(chercherProduit(104));
+console.log(chercherProduit(999));
+
+
+const produitsEnRupture = produits.filter((produit) => produit.stock === 0);
+
+console.log(`${produitsEnRupture.length} produits en rupture.`);

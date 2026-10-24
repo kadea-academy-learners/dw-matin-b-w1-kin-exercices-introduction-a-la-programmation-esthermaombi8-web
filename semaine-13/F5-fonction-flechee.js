@@ -24,4 +24,14 @@ Quand peut-on enlever les parenthèses autour des paramètres, et quand peut-on 
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+// Version classique recopiée en commentaire :
+// function saluer(prenom) { return 'Mbote ' + prenom + ' !'; }
 
+// Version fléchée avec un retour implicite.
+const saluer = (prenom) => `Mbote ${prenom} !`;
+
+// Le carré d'un nombre est ce nombre multiplié par lui-même.
+const carre = (nombre) => nombre * nombre;
+
+// Affichage de deux résultats sur une seule ligne.
+console.log(`${saluer("Lys")} puis ${carre(7)}.`);

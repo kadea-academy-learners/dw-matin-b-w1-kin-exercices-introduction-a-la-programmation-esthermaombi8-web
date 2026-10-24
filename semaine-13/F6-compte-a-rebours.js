@@ -21,3 +21,15 @@ Recherche (à rédiger dans RECHERCHES.md) :
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+let resultat = "";
+
+for (let i = 10; i >= 1; i--) {
+
+    if (i === 5) {
+        continue;
+    }
+
+    resultat = `${resultat}${i}, `;
+}
+
+console.log(`${resultat}Décollage !`);

@@ -11,15 +11,30 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...un objet est un groupement des plusieurs informations liées dans un seul conteneur,null parcontre indique une absence de valeur.
+typeof null renvoie "object" à cause d’une erreur historique dans les premières versions de JavaScript, null était identifié comme un objet, Ce comportement a été conservé pour éviter de casser les anciens programmes.
+
 
 **Mon test dans la console :**
 
-```js
-// colle ici le test que tu as exécuté et le résultat obtenu
-```
+```js  $ node semaine-13/F1-carte-apprenant.js
+const prenom = "Grace";  // nous utilisons const pour le prénom car il ne sera pas reassigner tout au long du programme.
+const commune = "Lemba"; // la commune ne changera pas pendant l'exercice
+const age = 22; // l'âge reste fixe pendant l'exécution du script.
+const estInscrit = true; // le statut d'inscription ne sera pas modifié
+let surnom; // le surnom n'est pas encore renseigné et pourra être attribué plus tard.
+const ancienneFormation = null; //  on conserve null pour représenter l'absence d'ancienne formation.
 
-**Source :** 
+console.log(`Je m'appelle ${prenom}, j'ai ${age} ans, j'habite à ${commune}`);
+
+
+console.log(`${typeof prenom}, ${typeof commune},${typeof age},${typeof estInscrit}, ${typeof surnom},${typeof ancienneFormation}`);
+
+// colle ici le test que tu as exécuté et le résultat obtenu
+``` Je m'appelle Grace, j'ai 22 ans, j'habite à Lemba
+string, string,number,boolean, undefined,object
+
+**Source :** oui (Pourquoi typeof null renvoie-t-il 'object' alors que null n'est pas un objet en javaScript et c'est quoi un objet en js ?,J’ai vérifié sur MDN que typeof null renvoie "object", bien que null soit une valeur primitive+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/typeof )
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -29,15 +44,16 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...NaN est une valeur spéciale qui indique qu’une conversion ou un calcul n’a pas produit de nombre valide ,NaN signifie qu’on n’a pas obtenu de nombre valide. Il ne représente donc pas une valeur précise qu’on pourrait comparer normalement et donc il renvoie false.
+on utilise Number.isNaN() pour le detecter
 
-**Mon test dans la console :**
+**Mon test dans la console :**console.log(`${saisie + 500}, puis ${total} ; les predictions vérifiées : ${Number("")}, ${Number("abc")}, ${Number(" 42 ")}, ${Number(true)}`);
 
-```js
+```js 2500500, puis 3000 ; les predictions vérifiées : 0, NaN, 42, 1
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON,https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -47,15 +63,20 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...-7 % 2 renvoie -1, car en JavaScript, le reste conserve le signe du nombre divisé.
+Un nombre impair peut donc avoir un reste de 1 ou -1 quand on le divise par 2.Il vaut mieux utiliser nombre % 2 !== 0, car un nombre impair a toujours un reste différent de zéro, qu’il soit positif ou négatif.
+Avec nombre % 2 === 1, les impairs négatifs ne sont pas reconnus : par exemple, -7 % 2 donne -1, et non 1
 
 **Mon test dans la console :**
 
-```js
+    console.log(`Ticket ${numeroTicket} : pair, tu gagnes un tote bag.`);
+    console.log(`Ticket ${numeroTicket} : impair, tu gagnes un stylo.`);
+
+```js  Ticket 17 : impair, tu gagnes un stylo.
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI.Que renvoie -7 % 2 en javaScript et pourquoi il vaut mieux tester % 2 !== 0 plutôt que % 2 === 1 pour détecter un nombre impair
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -65,15 +86,19 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Oui, on peut enchaîner plusieurs opérateurs ternaires pour traiter plusieurs conditions à la fois.
+Mais cela est souvent déconseillé, car les `?` et les `:` imbriqués rendent le code plus difficile à lire, à comprendre et à corriger,ils detruisent la lisibilité du code
+Pour plusieurs cas, if / else if / else est généralement plus clair.
 
-**Mon test dans la console :**
+**Mon test dans la console :**console.log(`Statut : ${statut} — Tarif : ${tarif} FC`);
 
-```js
+```js node semaine-13/F4-controleur-bus.js
+Statut : mineur — Tarif : 500 FC
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI,Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditional_operator
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -83,15 +108,19 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Dans une fonction fléchée, **on peut enlever les parenthèses s’il y a un seul paramètre simple**, sans valeur par défaut. Avec zéro ou plusieurs paramètres, elles sont obligatoires.
 
-**Mon test dans la console :**
+**On peut enlever return et les accolades lorsque le corps est une seule expression dont on veut renvoyer le résultat.** JavaScript renvoie alors automatiquement ce résultat : c’est le **retour implicite**.
 
-```js
+**Mon test dans la console :**console.log(`${saluer("Lys")} puis ${carre(7)}.`);
+
+```js  node semaine-13/F5-fonction-flechee.js
+Mbote Lys ! puis 49.
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON, https://coddy.tech/learn/fr/javascript/fundamentals/arrow_functions
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -101,15 +130,18 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
-
+...continue saute les instructions restantes du tour actuel,elle sert à interrompre l'itération en cours d'une boucle pourque la boucle passe au tour suivant alors que break arrête complètement la boucle arrête et quitte complètement la boucle d'un coup.
 **Mon test dans la console :**
+console.log(`Décollage !`);
+
+node semaine-13/F6-compte-a-rebours.js
+10, 9, 8, 7, 6, 4, 3, 2, 1, Décollage !
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON,https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/continue 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -119,15 +151,17 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...FizzBuzz est célèbre dans les entretiens d'embauche parce qu'il sert de filtre d'élimination instantané,il permet de vérifier les bases de la programmation et de connaitre comment un candidat peut réflechir,sa capacité de structurér les conditions et sa capacité d'expliquer chaque ligne du code.
 
 **Mon test dans la console :**
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
-```
+``` console.log(resultat); .
+node semaine-13/M1-fizzbuzz.js
+1, 2, Malewa, 4, Wewa, Malewa, 7, 8, Malewa, Wewa, 11, Malewa, 13, 14, MalewaWewa, 16, 17, Malewa, 19, Wewa, Malewa, 22, 23, Malewa, Wewa, 26, Malewa, 28, 29, MalewaWewa
 
-**Source :** 
+**Source :**NON.    https://www.quora.com/Why-do-employers-use-the-FizzBuzz-test-to-qualify-developers-when-the-developer-is-perfectly-capable-without-FizzBuzz 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -137,15 +171,29 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+... pour afficher 75000 sous la forme 75 000 avec totalString() il suffit de changer paramètres régionaux en fr-FR on aura donc variable.toLocaleString('fr-FR'),le navigateur utilise par defaut la langue de l'utilisateur,en forçant la locale 'fr-FR',applique les règles de typographie française
+
 
 **Mon test dans la console :**
 
-```js
+```js 
+console.log(retirer(100000, 25000));
+console.log(retirer(100000, 12000));
+console.log(retirer(1000000, 600000));
+console.log(retirer(20000, 50000));
+
+ node semaine-13/M2-dab.js
+Retrait accepté. Nouveau solde : 75000 FC
+Montant invalide : multiples de 5 000 FC uniquement
+Plafond dépassé : 500 000 FC maximum
+Solde insuffisant
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI.comment afficher 75000 sous la forme 75 000 avec un espace comme separateur avec tolocalestring() ?
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString#:~:text=La%20m%C3%A9thode%20toLocaleString()%20des%20instances,prendre%20en%20compte%20les%20locales.
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -155,15 +203,36 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Les valeurs falsy sont celles que JavaScript considère comme fausses dans une condition :
+- false:le booleen faux lui meme
+- 0 et -0
+- 0n : zéro de type BigInt
+- "" : une chaîne vide, également écrite '' ou avec deux accents graves
+- null: l'absence intentionnelle des valeurs
+- undefined:une variable declaré qui n'a pas encore des valeurs
+- NaN: not a number
+- document.all : un cas historique particulier dans les navigateurs
+Attention : "0" et " " sont truthy, car ce sont des chaînes qui ne sont pas vides.
 
 **Mon test dans la console :**
 
-```js
+```js console.log(`${estRempli("")}, ${estRempli("Esther")}, ${estRempli(0)}, ${estRempli(42)}, ${estRempli(null)}, ${estRempli(undefined)}, ${estRempli(NaN)}, ${estRempli(" ")}, ${estRempli("0")}, ${estRempli(false)}`);
+$ node semaine-13/M3-champs-vides.js
+vide
+rempli
+vide
+rempli
+vide
+vide
+vide
+rempli
+rempli
+vide
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON, https://developer.mozilla.org/fr/docs/Glossary/Falsy
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -173,33 +242,43 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...L’opérateur ?? fournit une valeur par défaut uniquement si la valeur de gauche est null ou undefined.
+L’opérateur || fournit une valeur par défaut si la valeur de gauche est falsy, ce qui inclut aussi 0, false et "".
 
 **Mon test dans la console :**
 
-```js
+```js console.log(`avant correction : ${15 || "aucun"}, ${0 || "aucun"}, ${undefined || "aucun"} ; après correction : ${15 ?? "aucun"}, ${0 ?? "aucun"}, ${undefined ?? "aucun"}.`);
+
+avant correction : 15, aucun, aucun ; après correction : 15, 0, aucun.
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON,https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
 ## M5 — La vitre teintée (portée de bloc)
 
 **Question :** Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fonction et le « hoisting ».
-
+ 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...var est déconseillé dans le code moderne parce que son comportement peut provoquer des erreurs difficiles à repérer. On préfère const et let, dont la portée est limitée au bloc { }.
+La portée de fonction signifie qu’une variable déclarée avec var est accessible dans toute la fonction qui la contient, même si elle est déclarée dans un bloc if ou une boucle. Elle ne reste donc pas limitée à ce bloc.
+Le hoisting signifie que JavaScript prend en compte les déclarations avant d’exécuter les instructions. Avec var, la variable peut être lue avant sa déclaration sa valeur est donc undefined. 
 
-**Mon test dans la console :**
+**Mon test dans la console :** avant correction: const ville = "Kinshasa";
+SyntaxError: Identifier 'ville' has already been declared
+aprés correction:
+Kinshasa
+Gombe
+pondu
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON,https://openclassrooms.com/forum/sujet/let-ou-var
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -209,15 +288,19 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...ASI est une fonctionnalité javaScript qui insère des points virgules aprés chaque ligne de code et dans notre cas, le saut de ligne après return provoque l’insertion d’un point-virgule cela fait que la fonction s’arrête et renvoie undefined.il faut placer le message à renvoyer sur la même ligne que return.
 
 **Mon test dans la console :**
 
-```js
+```js console.log(saluer("Ney"));
+8
+660
+Mbote Ney
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -227,15 +310,33 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Chaque exemple ci-dessous est indépendant.
+
+- **`+=`** ajoute une valeur : `let x = 10; x += 3;` donne `13`.
+- **`-=`** soustrait une valeur : `let x = 10; x -= 3;` donne `7`.
+- **`*=`** multiplie par une valeur : `let x = 10; x *= 3;` donne `30`.
+- **`/=`** divise par une valeur : `let x = 10; x /= 2;` donne `5`.
+- **`%=`** affecte le reste d’une division : `let x = 10; x %= 3;` donne `1`.
+- **`**=`** élève à une puissance : `let x = 2; x **= 3;` donne `8`.
+- **`<<=`** décale les bits vers la gauche : `let x = 4; x <<= 1;` donne `8`.
+- **`>>=`** décale les bits vers la droite en conservant le signe : `let x = 8; x >>= 1;` donne `4`.
+- **`>>>=`** décale les bits vers la droite en insérant des zéros à gauche : `let x = 8; x >>>= 1;` donne `4`.
+- **`&=`** applique un ET bit à bit : `let x = 6; x &= 3;` donne `2`.
+- **`^=`** applique un OU exclusif bit à bit : `let x = 6; x ^= 3;` donne `5`.
+- **`|=`** applique un OU bit à bit : `let x = 6; x |= 3;` donne `7`.
+- **`&&=`** affecte la valeur de droite si la variable est truthy : `let x = 5; x &&= 10;` donne `10`.
+- **`||=`** affecte la valeur de droite si la variable est falsy : `let x = 0; x ||= 10;` donne `10`.
+- **`??=`** affecte la valeur de droite si la variable vaut `null` ou `undefined` : `let x = null; x ??= 10;` donne `10`.
 
 **Mon test dans la console :**
 
-```js
+```js console.log(`Total après 12 semaines : ${totalEpargne} FC`);
+Total après 12 semaines : 27000 FC
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI.il existe combien des types d'operateur composé.peut-tu en citer et donner un exemple pour chacun?
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -245,15 +346,18 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+... while vérifie la condition avant chaque tour,avant qu'elle n'execute l'instruction et dans notre cas elle peut ne jamais s’exécuter.
+Avec un do...while, Le bloc d'instructions est exécuté une première fois, puis la condition est testée aprèset dans notre cas la batterie initiale de 15 % passerait donc à 0 %, et le compteur serait de 1 heure.
 
 **Mon test dans la console :**
 
-```js
+```js Après 6 h, batterie à 10 % : branche ton téléphone !
+Test : 0 tour, batterie à 15 %.
+ console.log(`Test : ${heuresTest} tour, batterie à ${batterieTest} %.`);
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** NON,https://www-sop.inria.fr/members/Sylvain.Chevillard/fr.selfhtml.org/javascript/langage/boucles.htm
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -263,16 +367,27 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...JavaScript stocke tout ses nombres de type number en binaire (au format flottant 64bits) etcertains decimal comme 0,1 et 0,2 ne peuvent pas s'écrire de manière exacte en binaire,ils deviennent des fractions binaires infinies qui sont arrondies.
+ toFixed() est une methode qui renvoie une chaîne de caractères.Avec +, on risque d'assembler et non additionner,elle arrondit de facon imprevisible qu'au cours d'une chaine de calcul elle peut fausser les resultat en accumulant des erreurs
 
 **Mon test dans la console :**
 
 ```js
+
 // colle ici le test que tu as exécuté et le résultat obtenu
-```
+```$Teste des trois exemples evoqué dans l'énoncé.
+console.log(calculerLivraison(3, 2));         // 2320
+console.log(calculerLivraison(10, 12, true)); // 9570
+console.log(calculerLivraison(20, 5));        // 8120
+//  node semaine-13/A1-livraison.js
+2320
+9570
+8120
 
-**Source :** 
-
+**Source :** OUI, Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ,comment pouvons nous définir toFixed() et pourquoi il est un piège si on veut continuer à calculer ?
+https://www.google.com/url?sa=i&source=web&rct=j&url=https://coddy.tech/docs/fr/javascript/numbers-and-bigint&ved=2ahUKEwiclaLu1M2XAxUWRZ8JHe1rNB8QmL8OegoIAggACAAIHxAE&opi=89978449&cd&psig=AOvVaw2bbrz2_nIK5kleDDRVxhRT&ust=1792759809698000
+https://www.google.com/url?sa=i&source=web&rct=j&url=https://www.youtube.com/watch?v%3DCDYiwshriWw&ved=2ahUKEwiclaLu1M2XAxUWRZ8JHe1rNB8QmL8OegoIAggACAAIHxAP&opi=89978449&cd&psig=AOvVaw2bbrz2_nIK5kleDDRVxhRT&ust=1792759809698000
+https://www.google.com/url?sa=i&source=web&rct=j&url=https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math&ved=2ahUKEwjW84TB3M2XAxW2V0EAHQYpJxUQxfoOegYIAAgMEAY&opi=89978449&cd&psig=AOvVaw0lq3VUdHLcssxrJbR3xGUU&ust=1792761862411000
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
 ## A2 — Le moteur de paie v2
@@ -281,15 +396,23 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...La methode reduce()parcourt les éléments d’un tableau pour les combiner et obtenir un seul résultat final.
+Elle garde en mémoire un résultat provisoire appelé accumulateur
+const totalHeures = heuresSemaine.reduce(
+  (total, heuresJour) => total + heuresJour,
+  0
+);
 
 **Mon test dans la console :**
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
-```
+```Affichage de tous les résultats dans un gabarit littéral.
+console.log(`Total : ${totalHeures} h — Salaire : ${salaire} FC ; jour le plus chargé : ${joursSemaine[indiceJourMax]} (${heuresSemaine[indiceJourMax]} h).`);
+$ node semaine-13/A2-paie.Js
+Total : 48 h — Salaire : 130000 FC ; jour le plus chargé : mercredi (10 h).
 
-**Source :** 
+**Source :**NON. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -299,15 +422,30 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Pour afficher seulement les colonnes nom et stock,il faut passer leurs noms dans le deuxième argument de console.log en string,on aura donc console.table(produits, ["nom", "stock"]);.
+Quand aucun produit ne correspond à la recherche find() renvoie undefined pour signifier qu'aucun élément n’a été trouvé ,filter() renvoie [] un tableau vide
 
 **Mon test dans la console :**
 
 ```js
-// colle ici le test que tu as exécuté et le résultat obtenu
-```
 
-**Source :** 
+// colle ici le test que tu as exécuté et le résultat obtenu
+```console.log(chercherProduit(104));
+console.log(chercherProduit(999));
+console.log(`${produitsEnRupture.length} produits en rupture.`);
+{
+  id: 104,
+  nom: 'Gourde isotherme',
+  categorie: 'Accessoires',
+  prixFC: 21000,
+  stock: 8
+}
+Produit introuvable
+2 produits en rupture.
+
+**Source :**OUI,Comment afficher seulement les colonnes nom et stock avec console.table() ? Et que renvoient .find() et .filter() quand rien ne correspond ?
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array
+https://developer.mozilla.org/fr/docs/Web/API/console/table_static
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -317,15 +455,22 @@
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Pour classer un bulletin de la meilleure à la moins bonne moyenne en JavaScript, il faut utiliser la méthode .sort() avec une fonction de comparaison descendante.sort() modifie le tableau d’origine parce qu’elle effectue le tri directement dans ce tableau,elle ne crée aucune copie ,elle renvoie ensuite ce même tableau trié ,parfois sort().Pour l'eviter il est recommandé de changer l’ordre des éléments du tableau.créer une copie du tableau avant le tri. Ainsi, bulletinTrie contient le classement et bulletin conserve son ordre du depart.
 
 **Mon test dans la console :**
 
-```js
+```console.table(bulletin);
+console.log(`${admis.length} admis`);
+(premierExcellent !== undefined) {
+    console.log(`Premier Excellent : ${premierExcellent.nom}`);
+ {console.log(`Aucun élèves avec la mention Excellent`);
+js 4 admis
+Premier Excellent : Bijou
+
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :**NON, https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -333,16 +478,24 @@
 
 **Question :** Explique la « recherche dichotomique » et pourquoi 7 essais suffisent toujours pour trouver un nombre entre 1 et 100.
 
-**Ma réponse (avec mes mots, 3 à 5 lignes) :**
+**Ma réponse (avec mes mots, 3 à 5 lignes) :**La recherche dichotomique consiste à proposer le nombre situé au milieu des valeurs encore possibles.Tu proposes ensuite le milieu du nouvel intervalle, et tu recommences. Chaque mauvaise réponse élimine environ la moitié des possibilités.
+Le nombre de possibilités diminue ainsi : 100 → 50 → 25 → 12 → 6 → 3 → 1. Sept essais suffisent si tu choisis toujours le milieu de l’intervalle après six mauvaises propositions au maximum, il reste un seul nombre et la septième permet de le trouver.
 
 ...
 
 **Mon test dans la console :**
+console.log(`Les 7 essais sont épuisés. Le nombre était ${nombreMystere}.`);
+```jouer();
 
-```js
+js3VM286:39 Plus grand !
+2VM286:41 Plus petit !
+2VM286:39 Plus grand !
+VM286:46 Les 7 essais sont épuisés. Le nombre était 46.
+undefined
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI, c'est quoi une recherches dichotomique et en quoi consiste-t-elle?et pourquoi 7 essais suffisent toujours pour trouver un nombre entre 1 et 100.
+https://fr.wikipedia.org/wiki/Recherche_dichotomique
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non

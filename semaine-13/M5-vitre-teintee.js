@@ -36,18 +36,23 @@ Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fo
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 // Mes prédictions (avant d'exécuter) :
-//
+//la variable const commune est declarer à l'interieur  des accolades, il doit donc etre afficher à l'interieur aussi
+// la variable const secret est declarer à l'interieur d'une fonction et ne peut etre accessible qu'à l'interieur de cette fonction
 
-const ville = 'Kinshasa';
+
+//aprés correction
+
+const ville = "Kinshasa";
+
 if (true) {
-  const commune = 'Gombe';
+  const commune = "Gombe";
   console.log(ville);
+  console.log(commune);
 }
-console.log(commune);
 
 const afficher = () => {
-  const secret = 'pondu';
+  const secret = "pondu";
   return secret;
 };
-console.log(afficher());
-console.log(secret);
+
+console.log(afficher()); 

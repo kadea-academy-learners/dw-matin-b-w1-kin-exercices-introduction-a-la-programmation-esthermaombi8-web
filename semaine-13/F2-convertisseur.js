@@ -16,9 +16,20 @@ Résultat attendu :
 
 Recherche (à rédiger dans RECHERCHES.md) :
 Qu'est-ce que NaN, et pourquoi NaN === NaN renvoie false ? Quelle fonction utiliser pour le détecter ?
-`;
+`
 // ===== FIN ÉNONCÉ =====
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+const saisie = "2500";
+const total = Number(saisie) + 500;
+// Mes prédictions avant de tester :
+// Number("") donnera 0.
+// Number("abc") donnera NaN.
+// Number(" 42 ") donnera 42.
+// Number(true) donnera 1.
+
+
+// Le premier + assemble le texte ; après Number(), il additionne.
+console.log(`${saisie + 500}, puis ${total} ; les predictions vérifiées : ${Number("")}, ${Number("abc")}, ${Number(" 42 ")}, ${Number(true)}`);
