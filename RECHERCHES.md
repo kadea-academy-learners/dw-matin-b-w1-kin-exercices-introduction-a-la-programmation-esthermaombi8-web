@@ -86,15 +86,19 @@ Avec nombre % 2 === 1, les impairs négatifs ne sont pas reconnus : par exemple,
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
 
-...
+...Oui, on peut enchaîner plusieurs opérateurs ternaires pour traiter plusieurs conditions à la fois.
+Mais cela est souvent déconseillé, car les `?` et les `:` imbriqués rendent le code plus difficile à lire, à comprendre et à corriger,ils detruisent la lisibilité du code
+Pour plusieurs cas, if / else if / else est généralement plus clair.
 
-**Mon test dans la console :**
+**Mon test dans la console :**console.log(`Statut : ${statut} — Tarif : ${tarif} FC`);
 
-```js
+```js node semaine-13/F4-controleur-bus.js
+Statut : mineur — Tarif : 500 FC
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** 
+**Source :** OUI,Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditional_operator
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
