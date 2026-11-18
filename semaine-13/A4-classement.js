@@ -30,7 +30,7 @@ const eleves = [
     { nom: "Exaucé", notes: [16, 15, 19] }
 ];
 
-const calculeMoyenne = (notes) => {
+const calculerMoyenne = (notes) => {
     let total = 0;
 
     for (const note of notes) {
@@ -40,8 +40,8 @@ const calculeMoyenne = (notes) => {
 };
 
 
-const bulletin = eleves.map((eleves) => {
-    const moyenne = calculeMoyenne(eleves.notes);
+const bulletin = eleves.map((eleve) => {
+    const moyenne = calculerMoyenne(eleve.notes);
     let mention;
 
     if (moyenne >= 16) {
@@ -53,19 +53,18 @@ const bulletin = eleves.map((eleves) => {
     }
 
     return {
-        nom: eleves.nom,
+        nom: eleve.nom,
         moyenne,
         mention
     };
 });
 
 const admis = bulletin.filter(
-    (eleves) =>
-        eleves.mention === "Excellent" || eleves.mention === "Admis"
+    (eleve) => eleve.mention === "Excellent" || eleve.mention === "Admis"
 );
 
 const premierExcellent = bulletin.find(
-    (eleves) => eleves.mention === "Excellent"
+    (eleve) => eleve.mention === "Excellent"
 );
 
 console.table(bulletin);

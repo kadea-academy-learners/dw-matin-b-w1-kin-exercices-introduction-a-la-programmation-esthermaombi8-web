@@ -21,10 +21,17 @@ Recherche (à rédiger dans RECHERCHES.md) :
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+// Étape 2 : boucle pour n'afficher que les nombres pairs (10, 8, 6, 4, 2)
+let pairs = "";
+for (let i = 10; i >= 2; i -= 2) {
+    pairs = `${pairs}${i}${i > 2 ? ", " : ""}`;
+}
+console.log(pairs);
+
+// Étape 3 : compte à rebours complet en sautant le 5 avec continue
 let resultat = "";
 
 for (let i = 10; i >= 1; i--) {
-
     if (i === 5) {
         continue;
     }

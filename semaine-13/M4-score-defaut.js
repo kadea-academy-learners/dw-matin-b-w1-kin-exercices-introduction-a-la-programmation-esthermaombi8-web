@@ -23,12 +23,24 @@ Que fait l'opérateur ?? (coalescence des nuls) et en quoi est-il différent de 
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+// 1. Version avec || montrant le bug (0 étant falsy, il est remplacé par "aucun")
 const afficherScoreBug = (score) => `Score : ${score || "aucun"}`;
+
+// 2. Test avec 15, 0 et undefined pour montrer le bug
+console.log(afficherScoreBug(15));
+console.log(afficherScoreBug(0));
+console.log(afficherScoreBug(undefined));
+
+// Explication du bug : 0 est une valeur falsy en JavaScript, donc l'opérateur || le remplace à tort par "aucun".
+// L'opérateur ?? (coalescence des nuls) ne remplace que null et undefined, préservant ainsi le score légitime 0.
+
+// 3. Version corrigée avec l'opérateur ??
 const afficherScore = (score) => `Score : ${score ?? "aucun"}`;
 
-console.log(`avant correction : ${15 || "aucun"}, ${0 || "aucun"}, ${undefined || "aucun"} ; après correction : ${15 ?? "aucun"}, ${0 ?? "aucun"}, ${undefined ?? "aucun"}.`);
-// 0 ici ne signifie pas que l'apprenant n'a aucune note, le 0 ici signifie que l'apprenant a fait son Quiz est a obtenue 0,le programme confond un score de zéro avec une absence de score
-//or L’opérateur || ne vérifie pas si un score existe. Il vérifie si la valeur est truthy ou falsy.puisque 0 est une valeur falsy || renvoi "aucun"
+console.log(afficherScore(15));
+console.log(afficherScore(0));
+console.log(afficherScore(undefined));
 
-const estConnecte = false; //// Le message s'affiche seulement si l'utilisateur est connecté, c'est à dire quand la valeur de la variable const estConnecte est true
+// 4. Bonus : court-circuit avec && (le message s'affiche seulement si estConnecte vaut true)
+const estConnecte = true;
 estConnecte && console.log(`Bienvenue !`);

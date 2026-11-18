@@ -23,29 +23,27 @@ Explique la « recherche dichotomique » et pourquoi 7 essais suffisent toujours
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 const jouer = () => {
-
     const nombreMystere = Math.floor(Math.random() * 100) + 1;
     const essaisMaximum = 7;
 
     let nombreEssais = 0;
     let estTrouve = false;
-    abc
-    while (estTrouve === false && nombreEssais < essaisMaximum) {
+
+    while (!estTrouve && nombreEssais < essaisMaximum) {
         const saisie = prompt(
             `Devine un entier entre 1 et 100. Il te reste ${essaisMaximum - nombreEssais} essais.`
         );
 
-
         if (saisie === null) {
             console.log(`Partie annulée.`);
-            return;
+            break;
         }
 
         const proposition = Number(saisie);
 
         if (
             saisie.trim() === "" ||
-            Number.isInteger(proposition) === false ||
+            Number.isNaN(proposition) ||
             proposition < 1 ||
             proposition > 100
         ) {
@@ -53,12 +51,11 @@ const jouer = () => {
             continue;
         }
 
-
         nombreEssais++;
 
         if (proposition === nombreMystere) {
             estTrouve = true;
-            console.log(`Trouvé en ${nombreEssais} essais !`);
+            console.log(`Trouvé en ${nombreEssais} essai${nombreEssais > 1 ? "s" : ""} !`);
         } else if (proposition < nombreMystere) {
             console.log(`Plus grand !`);
         } else {
@@ -66,8 +63,8 @@ const jouer = () => {
         }
     }
 
-    if (estTrouve === false) {
-        console.log(`Les 7 essais sont épuisés. Le nombre était ${nombreMystere}.`);
+    if (!estTrouve) {
+        console.log(`Perdu ! Le nombre mystère était ${nombreMystere}.`);
     }
 };
 

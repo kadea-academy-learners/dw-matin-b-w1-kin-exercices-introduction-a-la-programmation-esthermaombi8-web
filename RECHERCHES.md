@@ -47,13 +47,16 @@ string, string,number,boolean, undefined,object
 ...NaN est une valeur spéciale qui indique qu’une conversion ou un calcul n’a pas produit de nombre valide ,NaN signifie qu’on n’a pas obtenu de nombre valide. Il ne représente donc pas une valeur précise qu’on pourrait comparer normalement et donc il renvoie false.
 on utilise Number.isNaN() pour le detecter
 
-**Mon test dans la console :**console.log(`${saisie + 500}, puis ${total} ; les predictions vérifiées : ${Number("")}, ${Number("abc")}, ${Number(" 42 ")}, ${Number(true)}`);
+**Mon test dans la console :**
 
-```js 2500500, puis 3000 ; les predictions vérifiées : 0, NaN, 42, 1
-// colle ici le test que tu as exécuté et le résultat obtenu
+```js
+const saisie = "2500";
+const total = Number(saisie) + 500;
+console.log(`${saisie + 500}, puis ${total} ; les predictions vérifiées : ${Number("")}, ${Number("abc")}, ${Number(" 42 ")}, ${Number(true)}`);
+// 2500500, puis 3000 ; les predictions vérifiées : 0, NaN, 42, 1
 ```
 
-**Source :**NON,https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+**Source :** NON,https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -76,7 +79,7 @@ Avec nombre % 2 === 1, les impairs négatifs ne sont pas reconnus : par exemple,
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** OUI.Que renvoie -7 % 2 en javaScript et pourquoi il vaut mieux tester % 2 !== 0 plutôt que % 2 === 1 pour détecter un nombre impair
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Remainder
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -120,7 +123,7 @@ Mbote Lys ! puis 49.
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :**NON, https://coddy.tech/learn/fr/javascript/fundamentals/arrow_functions
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -161,7 +164,8 @@ node semaine-13/F6-compte-a-rebours.js
 node semaine-13/M1-fizzbuzz.js
 1, 2, Malewa, 4, Wewa, Malewa, 7, 8, Malewa, Wewa, 11, Malewa, 13, 14, MalewaWewa, 16, 17, Malewa, 19, Wewa, Malewa, 22, 23, Malewa, Wewa, 26, Malewa, 28, 29, MalewaWewa
 
-**Source :**NON.    https://www.quora.com/Why-do-employers-use-the-FizzBuzz-test-to-qualify-developers-when-the-developer-is-perfectly-capable-without-FizzBuzz 
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Remainder
+https://www.quora.com/Why-do-employers-use-the-FizzBuzz-test-to-qualify-developers-when-the-developer-is-perfectly-capable-without-FizzBuzz 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -278,7 +282,8 @@ pondu
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** NON,https://openclassrooms.com/forum/sujet/let-ou-var
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let
+https://developer.mozilla.org/fr/docs/Glossary/Hoisting
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -357,7 +362,7 @@ Test : 0 tour, batterie à 15 %.
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** NON,https://www-sop.inria.fr/members/Sylvain.Chevillard/fr.selfhtml.org/javascript/langage/boucles.htm
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/do...while
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
@@ -384,10 +389,8 @@ console.log(calculerLivraison(20, 5));        // 8120
 9570
 8120
 
-**Source :** OUI, Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ,comment pouvons nous définir toFixed() et pourquoi il est un piège si on veut continuer à calculer ?
-https://www.google.com/url?sa=i&source=web&rct=j&url=https://coddy.tech/docs/fr/javascript/numbers-and-bigint&ved=2ahUKEwiclaLu1M2XAxUWRZ8JHe1rNB8QmL8OegoIAggACAAIHxAE&opi=89978449&cd&psig=AOvVaw2bbrz2_nIK5kleDDRVxhRT&ust=1792759809698000
-https://www.google.com/url?sa=i&source=web&rct=j&url=https://www.youtube.com/watch?v%3DCDYiwshriWw&ved=2ahUKEwiclaLu1M2XAxUWRZ8JHe1rNB8QmL8OegoIAggACAAIHxAP&opi=89978449&cd&psig=AOvVaw2bbrz2_nIK5kleDDRVxhRT&ust=1792759809698000
-https://www.google.com/url?sa=i&source=web&rct=j&url=https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math&ved=2ahUKEwjW84TB3M2XAxW2V0EAHQYpJxUQxfoOegYIAAgMEAY&opi=89978449&cd&psig=AOvVaw0lq3VUdHLcssxrJbR3xGUU&ust=1792761862411000
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 
 ## A2 — Le moteur de paie v2
@@ -398,6 +401,8 @@ https://www.google.com/url?sa=i&source=web&rct=j&url=https://developer.mozilla.o
 
 ...La methode reduce()parcourt les éléments d’un tableau pour les combiner et obtenir un seul résultat final.
 Elle garde en mémoire un résultat provisoire appelé accumulateur
+
+
 const totalHeures = heuresSemaine.reduce(
   (total, heuresJour) => total + heuresJour,
   0
@@ -495,7 +500,7 @@ undefined
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
-**Source :** OUI, c'est quoi une recherches dichotomique et en quoi consiste-t-elle?et pourquoi 7 essais suffisent toujours pour trouver un nombre entre 1 et 100.
+**Source :** https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 https://fr.wikipedia.org/wiki/Recherche_dichotomique
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
